@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>无缝的轮播</title>
+    <style>
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .container .picsWrapper{
+            width:192px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .container .pics{
+            height: 192px;
+            width:800px;
+            white-space: nowrap;
+            border:1px solid red;
+        }
+        .container .pics img{
+            float:left;
+            margin: 9px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        ul>li {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #a30;
+            margin: 8px;
+            cursor: pointer;
+        }
+        .active{
+            box-shadow: 0 0 2px  #080808;
+            background-color: #f51;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="picsWrapper">
+            <div class="pics clearfix" id="pics">
+                <img src="./img/react.png" width="174" height="165" alt="React">
+                <img src="./img/angular.png" width="174" height="168" alt="Angular">
+                <img src="./img/vue.png" width="174" height="168" alt="Vue">
+                <img src="./img/node.png" width="174" height="168" alt="Node">
+            </div>
+        </div>
+        <div class="buttons">
+            <ul>
+                <li class="button1 active"></li>
+                <li class="button2"></li>
+                <li class="button3"></li>
+                <li class="button4"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>
