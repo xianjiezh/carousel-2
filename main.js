@@ -4,7 +4,6 @@ let pics=document.querySelector('.container .picsWrapper .pics')
 let n1 = 0
 setInterval(function () {
     let allPic = pics.children
-    
     for (let i = 0; i < allPic.length; i++) {
         const picture = allPic[i]
         let moveLength = 'translateX('+(-168 * n1)+'px)'

@@ -28,7 +28,6 @@
         .container .pics {
             height: 168px;
             width: 168px;
-            border: 1px solid red;
             display: flex;
             position: relative;
         }
@@ -36,33 +35,7 @@
             width: 100%;
             transition: all 0.5s;
         }
-         li {
-            list-style: none;
-        }
 
-        ul {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        ul>li {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #a30;
-            margin: 8px;
-            cursor: pointer;
-        }
-        .move{
-            transform: translateX(-100%);
-            transition:all .8s;
-        }
-        .active {
-            box-shadow: 0 0 2px #080808;
-            background-color: #f51;
-            transform: scale(1.1);
-        }
     </style>
 </head>
 
@@ -76,14 +49,6 @@
                 <img src="./img/node.png" alt="">
                 
             </div>
-        </div>
-        <div class="buttons">
-            <ul>
-                <li class="button1 active"></li>
-                <li class="button2"></li>
-                <li class="button3"></li>
-                <li class="button4"></li>
-            </ul>
         </div>
     </div>
 </body>
