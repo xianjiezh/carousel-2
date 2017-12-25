@@ -7,28 +7,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>无缝的轮播</title>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
         .clearfix::after {
             content: "";
             display: block;
             clear: both;
         }
-        .container .picsWrapper{
-            width:192px;
+
+        .container .picsWrapper {
+            width: 168px;
             margin: 0 auto;
             overflow: hidden;
         }
-        .container .pics{
-            height: 192px;
-            width:800px;
-            white-space: nowrap;
-            border:1px solid red;
+
+        .container .pics {
+            height: 168px;
+            width: 168px;
+            border: 1px solid red;
+            display: flex;
+            position: relative;
         }
         .container .pics img{
-            float:left;
-            margin: 9px;
+            width: 100%;
+            transition: all 0.5s;
         }
-
-        li {
+         li {
             list-style: none;
         }
 
@@ -46,9 +54,14 @@
             margin: 8px;
             cursor: pointer;
         }
-        .active{
-            box-shadow: 0 0 2px  #080808;
+        .move{
+            transform: translateX(-100%);
+            transition:all .8s;
+        }
+        .active {
+            box-shadow: 0 0 2px #080808;
             background-color: #f51;
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -56,11 +69,12 @@
 <body>
     <div class="container">
         <div class="picsWrapper">
-            <div class="pics clearfix" id="pics">
-                <img src="./img/react.png" width="174" height="165" alt="React">
-                <img src="./img/angular.png" width="174" height="168" alt="Angular">
-                <img src="./img/vue.png" width="174" height="168" alt="Vue">
-                <img src="./img/node.png" width="174" height="168" alt="Node">
+            <div class="pics" id="pics">
+                <img src="./img/react.png" alt="">
+                <img src="./img/angular.png" alt="">
+                <img src="./img/vue.png" alt="">
+                <img src="./img/node.png" alt="">
+                
             </div>
         </div>
         <div class="buttons">
@@ -73,6 +87,7 @@
         </div>
     </div>
 </body>
+<script src="jquery-3.2.1.min.js"></script>
 <script src="main.js"></script>
 
 </html>

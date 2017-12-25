@@ -1,29 +1,31 @@
 
 
 
-let pictures = document.getElementsByClassName('pics')[0]
-let n = 1
-pictures.clientWidth = document.documentElement.clientWidth
+let pics = document.getElementsByClassName('pics')[0]
 
-function setTimer(){
-    let firstChild = pictures.firstElementChild
-    let leftLength = n * (-192) + 'px'
-    console.log('leftLength:'+leftLength)
-    pictures.style.transform = 'translateX('+leftLength+')'
-    pictures.style.transition = 'all .6s'
-    pictures.firstElementChild.remove()
-    console.log(firstChild)
-    pictures.insertAdjacentElement('beforeend',firstChild)
-    console.log(pictures)
+setInterval(function () {
+    let allPic = pics.children
+    
+    for (let i = 0; i < allPic.length; i++) {
+        const picture = allPic[i]
+        picture.classList.add('move')
+        
+    }
+
+},1500)
+let n = 0
+let arr = ["./img/react.png", "./img/angular.png", "./img/vue.png", "./img/node.png"]
+setInterval(function () {
+    let m = n % 4
+    let t = '<div>hanhanhan</div>'
+    console.log('t',t,typeof t)
+    console.log('lics',pics)
+    pics.insertAdjacentElement('beforeend', t)
+    
     n += 1
-}
+}, 1000)
 
-let timer = setInterval(setTimer, 1500)
-
-let picWrapper = document.getElementsByClassName('picsWrapper')[0]
-picWrapper.onmouseenter = function () {
-    clearInterval(timer)
-}
-picWrapper.onmouseleave = function () {
-    timer = setInterval(setTimer, 1500)
+function template(src) {
+    let t = `<img src=${src}>`
+    return t
 }
