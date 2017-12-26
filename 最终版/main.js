@@ -4,35 +4,22 @@ function log() {
 }
 
 
-setTimeout(function () {
-    $('.picsWrapper>.pics').children().eq(0).removeClass('toCurrent').addClass('toLeft')
-    $('.picsWrapper>.pics').children().eq(1).removeClass('toRight').addClass('toCurrent')
-    log('1',$('.picsWrapper>.pics').children().eq(0))
-    $('.picsWrapper>.pics').children().eq(0).one('transitionend', function () {
-        $('.picsWrapper>.pics').children().eq(0).removeClass('toLeft').addClass('toRight')
+let n = 0
+setInterval(function () {
+    n = n % 4
+    let n1 = getN(n)
+    let n2 = getN(n+1)
+    $('.picsWrapper>.pics').children().eq(n1).removeClass('toCurrent').addClass('toLeft')
+    $('.picsWrapper>.pics').children().eq(n2).removeClass('toRight').addClass('toCurrent')
+    $('.picsWrapper>.pics').children().eq(n1).one('transitionend', function () {
+        $('.picsWrapper>.pics').children().eq(n1).removeClass('toLeft').addClass('toRight')
     })
+    n += 1
 }, 2000)
-setTimeout(function () {
-    $('.picsWrapper>.pics').children().eq(1).removeClass('toCurrent').addClass('toLeft')
-    $('.picsWrapper>.pics').children().eq(2).removeClass('toRight').addClass('toCurrent')
-    log('2',$('.picsWrapper>.pics').children().eq(0))
-    $('.picsWrapper>.pics').children().eq(1).one('transitionend', function () {
-        $('.picsWrapper>.pics').children().eq(1).removeClass('toLeft').addClass('toRight')
-    })
-}, 4000)
-setTimeout(function () {
-    $('.picsWrapper>.pics').children().eq(2).removeClass('toCurrent').addClass('toLeft')
-    $('.picsWrapper>.pics').children().eq(3).removeClass('toRight').addClass('toCurrent')
-    log('3',$('.picsWrapper>.pics').children().eq(0))
-    $('.picsWrapper>.pics').children().eq(2).one('transitionend', function () {
-        $('.picsWrapper>.pics').children().eq(2).removeClass('toLeft').addClass('toRight')
-    })
-}, 6000)
-setTimeout(function () {
-    $('.picsWrapper>.pics').children().eq(3).removeClass('toCurrent').addClass('toLeft')
-    $('.picsWrapper>.pics').children().eq(0).removeClass('toRight').addClass('toCurrent')
-    log('4',$('.picsWrapper>.pics').children().eq(0))
-    $('.picsWrapper>.pics').children().eq(3).one('transitionend', function () {
-        $('.picsWrapper>.pics').children().eq(3).removeClass('toLeft').addClass('toRight')
-    })
-}, 8000)
+
+function getN(num) {
+    if (num == 4) {
+        num = 0
+    }
+    return num
+}
