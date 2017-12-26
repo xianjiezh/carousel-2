@@ -2,11 +2,10 @@
 function log() {
     return console.log.apply(console, arguments)
 }
-
-
+let len = $('img').length
 let n = 0
 setInterval(function () {
-    n = n % 4
+    n = n % len
     let n1 = getN(n)
     let n2 = getN(n+1)
     $('.picsWrapper>.pics').children().eq(n1).removeClass('toCurrent').addClass('toLeft')
@@ -18,7 +17,7 @@ setInterval(function () {
 }, 2000)
 
 function getN(num) {
-    if (num == 4) {
+    if (num == len) {
         num = 0
     }
     return num
