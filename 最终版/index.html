@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 轮播 </title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .picsWrapper{
+        width: 168px;
+        height: 186px;
+        margin: 20px auto;
+        overflow: hidden;
+    }
+    .pics{
+        display: flex;
+        position: relative;
+        height: 186px;
+    }
+    .pics img{
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+    .toLeft{
+        transform: translateX(-100%);
+        z-index: 1;
+        transition: all 0.5s;
+    }
+    .toCurrent{
+        left: 0;
+        transform: translateX(0);
+        z-index: 1;
+        transition: all 0.5s;
+    }
+    .toRight{
+        transform: translateX(100%)
+    }
+    </style>
+</head>
+<body>
+    <div class="picsWrapper">
+        <div class="pics">
+            <img src="img/react.png" alt="">
+            <img src="img/node.png" alt="">
+            <img src="img/vue.png" alt="">
+            <img src="img/angular.png" alt="">
+        </div>
+
+    </div>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
