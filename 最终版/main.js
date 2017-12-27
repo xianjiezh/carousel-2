@@ -2,7 +2,7 @@
 function log() {
     return console.log.apply(console, arguments)
 }
-
+let arr = [".toLeft",".toCurrent", ".toRight"]
 let n = 0
 let timer = setInterval(function () {
     moveLeft(n)
@@ -33,15 +33,7 @@ function moveRight(n) {
     let n1 = getN(n)
     let n2 = getN(n + 1)
     let current = $('img.toCurrent')
-    log(current)
-    let left = $('img.toLeft')
-    $('img').one('transitionend',function(){
-        current.removeClass('toCurrent').addClass('toRight')
-        left.removeClass('toLeft').addClass('toCurrent')
-        current.one('transitionend',function(){
-            left.prev().removeClass('toRight').addClass('toLeft')
-        })
-    })
+    /*想了好几天，这个思路下是不能做到右移的，要崩溃了*/
     
 }
 $('.left').on('click', function () {
