@@ -10,22 +10,19 @@ function slideLeft() {
     let distance = '-' + (n * 168) + 'px'
     if(n <= 4){
         $('.pictures').css({ 'left': distance, transition: 'all .5s' })
+        n += 1
     }else if(n == 5){
-        $('.pictures').css({ 'left': distance, transition: 'all .5s' })
-        $('.pictures').one('transitionend',$('.pictures').css({'left': '-100%'})).offset()
-        $('.pictures').css({})
-    }
-    else{
         $('.pictures').offset()  // 
-        $('.pictures').css({ 'left': '-100%', 'transition': 'none'})
+        $('.pictures').css({ 'left': '0', 'transition': 'none'})
         n = 1
     }
-    n += 1
+    
 }
 
 let $firstCopy = $('.pictures').children().eq(0).clone(true)
-$('.pictures').prepend($firstCopy)
-let $lastCopy = $('.pictures').children().eq(-1).clone(true)
-$('.pictures').append($lastCopy)
+log($('.pictures').children().length)
+let $lastCopy = $('.pictures').children().eq($('.pictures').children().length - 1).clone(true)
+$('.pictures').append($firstCopy)
+$('.pictures').prepend($lastCopy)
 
 
