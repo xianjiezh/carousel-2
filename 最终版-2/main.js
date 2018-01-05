@@ -25,4 +25,9 @@ let $lastCopy = $('.pictures').children().eq($('.pictures').children().length - 
 $('.pictures').append($firstCopy)
 $('.pictures').prepend($lastCopy)
 
-
+$('.pictures').on('mouseenter',function(){
+    clearInterval(timer)
+})
+$('.pictures').on('mouseleave',function(){
+    let timer = setInterval(slideLeft, 1500)
+})
