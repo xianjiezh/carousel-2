@@ -18,7 +18,19 @@ function slideLeft() {
     }
     
 }
-
+function slideRight(){
+    let left = $('.pictures').offset().left
+    log(left)
+    let distance = -left + 168 +'px'
+    if(n > 1){
+        $('.pictures').css({ 'left': distance, transition: 'all .5s' })
+        n -= 1
+    } else{
+        $('.pictures').offset()  // 
+        $('.pictures').css({ 'left': '-840px', 'transition': 'none'})
+        n = 1
+    }
+}
 let $firstCopy = $('.pictures').children().eq(0).clone(true)
 log($('.pictures').children().length)
 let $lastCopy = $('.pictures').children().eq($('.pictures').children().length - 1).clone(true)
@@ -31,3 +43,6 @@ $('.pictures').on('mouseenter',function(){
 $('.pictures').on('mouseleave',function(){
     let timer = setInterval(slideLeft, 1500)
 })
+
+$('.left').on('click',slideLeft)
+$('.right').on('click',slideRight)
