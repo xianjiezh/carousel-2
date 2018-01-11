@@ -3,6 +3,14 @@
     padding: 0;
     list-style: none;
 }
+.clearfix::afeter{
+    content: '';
+    display: block;
+    clear: both;
+}
+body{
+    background-color: #f2f2f2;
+}
 header{
     text-align: center;
     margin-top: 50px;
@@ -26,4 +34,47 @@ header span a{
 }
 header span a:hover{
     text-decoration: underline;
+}
+/*main区域*/
+main .wrapper ul{
+    display: flex;
+    align-items: flex-start;
+}
+main{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:28px;
+    overflow: hidden;
+    box-shadow: 0 0 3px #AAAAAA;
+}
+main .menu{
+    background: linear-gradient(to bottom,#f5f5f5,#ececec);
+    border-radius: 0 0 5px 5px;
+}
+main .menu ul{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+main .menu ul li{
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+main .menu ul li::before{
+    content: '';
+    display: block;
+    width: 5px;
+    height: 6px;
+    margin-top: 0;
+    margin: 0 auto;
+    border-top: 5px solid red;
+    border-right: 3px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 3px solid transparent;
+    background: url(img/active_bg.png) no-repeat;
 }
