@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+header{
+    text-align: center;
+    margin-top: 50px;
+}
+header h1{
+    font-family: "Myriad Pro",Arial,Helvetica,sans-serif;
+    font-size: 42px;
+    font-weight: normal;
+    color: #444;
+}
+header h1:nth-child(2){
+    font-weight: bold; 
+    margin-bottom: 10px;
+}
+header span{
+    color: #44446b;
+}
+header span a{
+    color: #0196e3;
+    text-decoration: none;
+}
+header span a:hover{
+    text-decoration: underline;
+}
