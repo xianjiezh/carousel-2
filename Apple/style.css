@@ -64,17 +64,16 @@ main .menu ul li{
     float: left;
     margin-left: 10px;
     margin-right: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;;
 }
-main .menu ul li::before{
-    content: '';
-    display: block;
-    width: 5px;
-    height: 6px;
-    margin-top: 0;
-    margin: 0 auto;
-    border-top: 5px solid red;
-    border-right: 3px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 3px solid transparent;
-    background: url(img/active_bg.png) no-repeat;
+.active{
+    background: url(http://demo.tutorialzine.com/2009/11/beautiful-apple-gallery-slideshow/img/active_bg.png) no-repeat -14px 0 ;
+}
+.active::after{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(circle,#eee,#aaa);
+    opacity: 0.5;
 }
