@@ -36,3 +36,10 @@ function nthSibling(siblings, target){
         }
     }
 }
+let main = document.querySelector('main')
+main.addEventListener('mouseenter', function(){
+    window.clearInterval(timer)
+})
+main.addEventListener('mouseleave', function(){
+    timer = setInterval(slideLeft, 3000)
+})
