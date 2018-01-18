@@ -43,6 +43,7 @@ header span a:hover{
 main .wrapper ul{
     display: flex;
     align-items: flex-start;
+    transition: all .5s;
 }
 main{
     width: 900px;
